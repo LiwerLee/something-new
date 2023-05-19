@@ -1,0 +1,32 @@
+.task-list {
+  padding: 16px;
+}
+
+.title {
+  color: #7e6e91;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.task-card {
+  margin-bottom: 16px;
+}
+
+.task-title {
+  color: #7e6e91;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.task-description {
+  color: #bfa9c4;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+}

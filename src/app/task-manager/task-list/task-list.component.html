@@ -1,0 +1,16 @@
+<div class="task-list">
+  <h2 class="title">我的任務</h2>
+  <mat-card class="task-card" *ngFor="let task of tasks; let i = index">
+    <mat-card-content>
+      <h3 class="task-title">{{ task.title }}</h3>
+      <p class="task-description">{{ task.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary" (click)="editTask(i)">编辑</button>
+      <button mat-button color="warn" (click)="deleteTask(i)">删除</button>
+    </mat-card-actions>
+  </mat-card>
+  <button mat-fab color="primary" class="add-button" (click)="openDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
