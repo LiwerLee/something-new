@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { TaskListComponent } from './task-manager/task-list/task-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MaterialModule } from './material/material.module';
       { path: 'task-manager', loadChildren: () => import('./task-manager/task-manager.module').then(m => m.TaskManagerModule) },
     ]),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
 
   ],
   providers: [],

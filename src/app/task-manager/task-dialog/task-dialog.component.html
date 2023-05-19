@@ -7,7 +7,7 @@
     <textarea rows="5" matInput [(ngModel)]="data.description" placeholder="描述"></textarea>
   </mat-form-field>
 </mat-dialog-content>
-<mat-dialog-actions>
+<mat-dialog-actions fxLayout="row" fxLayoutAlign="space-around">
   <button mat-button (click)="onNoClick()">取消</button>
   <button mat-button [mat-dialog-close]="data" cdkFocusInitial>保存</button>
 </mat-dialog-actions>

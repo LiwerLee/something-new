@@ -8,7 +8,11 @@ import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
   styleUrls: ['./task-list.component.scss']
 })
 export class TaskListComponent {
-  tasks: any[] = [];
+  tasks: any[] = [{ title: 'title', description: 'description' },
+  { title: 'title', description: 'description' },
+  { title: 'title', description: 'description' },
+  { title: 'title', description: 'description' },
+  { title: 'title', description: 'description' }];
 
   constructor(public dialog: MatDialog) { }
 

@@ -5,6 +5,7 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { TaskDialogComponent } from './task-dialog/task-dialog.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
       { path: '', component: TaskListComponent }
     ]),
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ]
 })
 export class TaskManagerModule { }
