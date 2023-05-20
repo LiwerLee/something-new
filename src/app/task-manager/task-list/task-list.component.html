@@ -1,4 +1,4 @@
-<h2 class="title">我的任務</h2>
+<h2 class="title">{{'taskManager' | translate}}</h2>
 <div class="task-list" fxLayout="row wrap" fxLayoutAlign="start">
   <mat-card class="task-card" *ngFor="let task of tasks; let i = index">
     <mat-card-content class="task-card-content">
@@ -6,11 +6,11 @@
       <p class="task-description">{{ task.description }}</p>
     </mat-card-content>
     <mat-card-actions fxLayout="row" fxLayoutAlign="space-around">
-      <button mat-button color="primary" (click)="editTask(i)">编辑</button>
-      <button mat-button color="warn" (click)="deleteTask(i)">删除</button>
+      <button mat-button color="primary" (click)="editTask(i)">{{'edit' | translate}}</button>
+      <button mat-button color="warn" (click)="deleteTask(i)">{{'delete' | translate}}</button>
     </mat-card-actions>
   </mat-card>
 </div>
 <button mat-fab color="primary" class="add-button" (click)="openDialog()">
-  <mat-icon>add</mat-icon>
+  <mat-icon>{{'add' | translate}}</mat-icon>
 </button>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
 import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
 
 @Component({
@@ -14,7 +15,10 @@ export class TaskListComponent {
   { title: 'title', description: 'description' },
   { title: 'title', description: 'description' }];
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    private translate: TranslateService
+  ) { }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
