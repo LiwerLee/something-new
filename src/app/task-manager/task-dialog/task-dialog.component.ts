@@ -10,11 +10,9 @@ export class TaskDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<TaskDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) {
+  ) { }
 
-  }
-
-  onNoClick(): void {
+  cancel(): void {
     this.dialogRef.close();
   }
 }
