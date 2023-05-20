@@ -23,7 +23,7 @@ export class TaskListComponent {
   openDialog(): void {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
       width: '300px',
-      data: { title: '', description: '' },
+      data: { header: 'createTask', title: '', description: '' },
       position: {
         left: 'calc(50vw - 150px)'
       }
@@ -43,7 +43,7 @@ export class TaskListComponent {
   editTask(index: number): void {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
       width: '300px',
-      data: { title: this.tasks[index].title, description: this.tasks[index].description }
+      data: { header: 'editTask', title: this.tasks[index].title, description: this.tasks[index].description }
     });
 
     dialogRef.afterClosed().subscribe(result => {

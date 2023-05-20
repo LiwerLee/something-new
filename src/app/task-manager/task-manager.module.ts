@@ -6,13 +6,15 @@ import { TaskDialogComponent } from './task-dialog/task-dialog.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
 
 @NgModule({
   declarations: [
-    TaskDialogComponent
+    TaskDialogComponent,
+    TaskListComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ]),
     FormsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    TranslateModule.forChild()
   ]
 })
 export class TaskManagerModule { }

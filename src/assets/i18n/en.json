@@ -1,6 +1,10 @@
 {
-  "taskManager": "task manager",
-  "add": "add",
-  "edit": "edit",
-  "delete": "delete"
+  "taskManager": "Task Manager",
+  "add": "Add",
+  "edit": "Edit",
+  "delete": "Delete",
+  "cancel": "Cancel",
+  "save": "Save",
+  "createTask": "Create Task",
+  "editTask": "Edit Task"
 }
