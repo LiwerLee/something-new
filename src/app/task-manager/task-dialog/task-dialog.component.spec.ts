@@ -5,6 +5,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { TaskDialogComponent } from './task-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
 describe('TaskDialogComponent', () => {
   let component: TaskDialogComponent;
@@ -19,8 +20,9 @@ describe('TaskDialogComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [TaskDialogComponent],
-      imports: [MaterialModule, FormsModule, BrowserAnimationsModule],
+      imports: [MaterialModule, FormsModule, BrowserAnimationsModule, TranslateModule.forRoot()],
       providers: [
+        TranslateService,
         { provide: MatDialogRef, useClass: MatDialogRefMock },
         { provide: MAT_DIALOG_DATA, useValue: {} }
       ]
