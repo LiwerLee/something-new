@@ -1,3 +1,6 @@
-<app-language-select fxLayout="row" fxLayoutAlign="end"></app-language-select>
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <h2 class="title">{{currentPage | translate}}</h2>
+  <app-language-select></app-language-select>
+</div>
 <app-navigation></app-navigation>
 <router-outlet></router-outlet>

@@ -1,3 +1,4 @@
+import { GlobalVariableService } from './service/global-variable.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -48,7 +49,7 @@ export function createTranslateLoader(http: HttpClient) {
       }
     }),
   ],
-  providers: [],
+  providers: [GlobalVariableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

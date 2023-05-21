@@ -7,6 +7,7 @@ import { MaterialModule } from '../material/material.module';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
+import { GlobalVariableService } from '../service/global-variable.service';
 
 
 
@@ -24,7 +25,8 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     MaterialModule,
     FlexLayoutModule,
-    TranslateModule.forChild()
-  ]
+    TranslateModule.forChild(),
+  ],
+  providers: []
 })
 export class TaskManagerModule { }

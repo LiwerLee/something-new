@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
+import { GlobalVariableService } from 'src/app/service/global-variable.service';
 import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
 
 @Component({
@@ -8,7 +9,8 @@ import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.scss']
 })
-export class TaskListComponent {
+export class TaskListComponent implements OnInit {
+
   tasks: any[] = [{ title: 'title', description: 'description' },
   { title: 'title', description: 'description' },
   { title: 'title', description: 'description' },
@@ -17,8 +19,13 @@ export class TaskListComponent {
 
   constructor(
     public dialog: MatDialog,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private globalVariableService: GlobalVariableService
   ) { }
+
+  ngOnInit(): void {
+    setTimeout(() => this.globalVariableService.setCurrentPage('taskManager'));
+  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(TaskDialogComponent, {

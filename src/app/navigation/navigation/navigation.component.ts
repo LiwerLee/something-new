@@ -1,3 +1,4 @@
+import { GlobalVariableService } from 'src/app/service/global-variable.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Component } from '@angular/core';
 
@@ -8,7 +9,8 @@ import { Component } from '@angular/core';
 })
 export class NavigationComponent {
   constructor(
-    private translate: TranslateService
+    private translate: TranslateService,
+    private GlobalVariableService: GlobalVariableService
   ) { }
   links = [
     { label: 'Home', route: '/home' },
@@ -16,4 +18,7 @@ export class NavigationComponent {
     { label: 'taskManager', route: '/task-manager' },
     { label: 'Contact', route: '/contact' }
   ];
+  changePage(label: string): void {
+    this.GlobalVariableService.setCurrentPage(label);
+  }
 }
