@@ -23,3 +23,7 @@
 .language-select .mat-icon {
   margin-right: 8px;
 }
+
+::ng-deep .language-select-container .mat-mdc-form-field-subscript-wrapper {
+  display: none !important;
+}
