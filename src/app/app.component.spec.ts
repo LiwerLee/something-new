@@ -1,3 +1,4 @@
+import { FooterComponent } from './footer/footer.component';
 import { MaterialModule } from './material/material.module';
 import { LanguageSelectComponent } from './language-select/language-select.component';
 import { TestBed } from '@angular/core/testing';
@@ -8,7 +9,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    declarations: [AppComponent, LanguageSelectComponent, NavigationComponent],
+    declarations: [AppComponent, LanguageSelectComponent, NavigationComponent, FooterComponent],
     imports: [RouterTestingModule, TranslateModule.forRoot(), MaterialModule],
     providers: [TranslateService]
   }));
