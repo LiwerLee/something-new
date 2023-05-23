@@ -1,8 +1,10 @@
+import { LocalStorageService } from './../../service/local-storage.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import { GlobalVariableService } from 'src/app/service/global-variable.service';
 import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
+import { Task } from '../interface/task';
 
 @Component({
   selector: 'app-task-list',
@@ -11,20 +13,18 @@ import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
 })
 export class TaskListComponent implements OnInit {
 
-  tasks: any[] = [{ title: 'title', description: 'description' },
-  { title: 'title', description: 'description' },
-  { title: 'title', description: 'description' },
-  { title: 'title', description: 'description' },
-  { title: 'title', description: 'description' }];
+  tasks: Task[] = [];
 
   constructor(
     public dialog: MatDialog,
     private translate: TranslateService,
-    private globalVariableService: GlobalVariableService
+    private globalVariableService: GlobalVariableService,
+    private localStorageService: LocalStorageService
   ) { }
 
   ngOnInit(): void {
     setTimeout(() => this.globalVariableService.setCurrentPage('taskManager'));
+    this.tasks = this.localStorageService.getTaskList();
   }
 
   openDialog(): void {
@@ -39,12 +39,14 @@ export class TaskListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.tasks.push(result);
+        this.localStorageService.setTaskList(this.tasks);
       }
     });
   }
 
   deleteTask(index: number): void {
     this.tasks.splice(index, 1);
+    this.localStorageService.setTaskList(this.tasks);
   }
 
   editTask(index: number): void {
@@ -56,6 +58,7 @@ export class TaskListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.tasks[index] = result;
+        this.localStorageService.setTaskList(this.tasks);
       }
     });
   }

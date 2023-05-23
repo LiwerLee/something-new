@@ -1,3 +1,4 @@
+import { LocalStorageService } from './service/local-storage.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
@@ -13,15 +14,15 @@ export class AppComponent implements OnInit, OnDestroy {
   currentPage: string = '';
   constructor(
     private translate: TranslateService,
-    private globalVariableService: GlobalVariableService
+    private globalVariableService: GlobalVariableService,
+    private localStorageService: LocalStorageService
   ) {
-    translate.setDefaultLang('zh-tw');
-    translate.use('zh-tw');
+    const language = this.localStorageService.getLanguage();
+    this.translate.use(language);
   }
   ngOnInit(): void {
     this.currentPageSubscription = this.globalVariableService.currentPage$
       .subscribe((page: string) => {
-        console.log(page)
         this.currentPage = page
       });
   }
@@ -29,5 +30,5 @@ export class AppComponent implements OnInit, OnDestroy {
     console.log('destory')
     this.currentPageSubscription.unsubscribe();
   }
-  title = 'something-new';
+
 }

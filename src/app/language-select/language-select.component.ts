@@ -1,3 +1,4 @@
+import { LocalStorageService } from './../service/local-storage.service';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -7,7 +8,10 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./language-select.component.scss']
 })
 export class LanguageSelectComponent {
-  constructor(private translate: TranslateService) {
+  constructor(
+    private translate: TranslateService,
+    private localStorageService: LocalStorageService
+  ) {
 
   }
   selectedLanguage: string = this.translate.currentLang;
@@ -18,5 +22,6 @@ export class LanguageSelectComponent {
 
   onLanguageChange(event: any) {
     this.translate.use(event.value);
+    this.localStorageService.setLanguage(event.value);
   }
 }
